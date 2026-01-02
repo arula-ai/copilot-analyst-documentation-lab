@@ -4,30 +4,41 @@ Follow these steps through each stage. After each stage, run `/hand-off` to trac
 
 ## Quick Reference
 
-| Stage | Agents / Prompts | Core Artifacts |
-|-------|------------------|----------------|
-| 0 | — | Environment setup, verify `.github/agents/` |
-| 1A | @requirements-analyst, `/extract-requirements` | `outputs/requirements/portfolio-rebalancing-requirements.md` |
-| 1B | @legacy-analyst, `/analyze-cobol` | `outputs/requirements/trade-settlement-requirements.md` |
-| 2A | @diagram-architect, `/create-architecture-diagram` | `outputs/diagrams/portfolio-architecture.md` |
-| 2B | @diagram-architect, `/create-sequence-diagram` | `outputs/diagrams/trade-execution-sequence.md` |
-| 2C | @diagram-architect, `/create-legacy-flowchart` | `outputs/diagrams/trade-settlement-flow.md` |
-| 2D | @diagram-architect, `/create-fee-logic-diagram` | `outputs/diagrams/fee-calculation-logic.md` |
-| 2E | @diagram-architect, `/create-state-diagram` | `outputs/diagrams/settlement-states.md` |
-| 3 | @documentation-reviewer, `/review-documentation` | `outputs/review-summary.md` |
+| Stage | Agent (select from dropdown) | Prompt | Core Artifacts |
+|-------|------------------------------|--------|----------------|
+| 0 | — | — | Environment setup, verify `.github/agents/` |
+| 1A | Requirements Analyst | `/extract-requirements` | `outputs/requirements/portfolio-rebalancing-requirements.md` |
+| 1B | Legacy Analyst | `/analyze-cobol` | `outputs/requirements/trade-settlement-requirements.md` |
+| 2A | Diagram Architect | `/create-architecture-diagram` | `outputs/diagrams/portfolio-architecture.md` |
+| 2B | Diagram Architect | `/create-sequence-diagram` | `outputs/diagrams/trade-execution-sequence.md` |
+| 2C | Diagram Architect | `/create-legacy-flowchart` | `outputs/diagrams/trade-settlement-flow.md` |
+| 2D | Diagram Architect | `/create-fee-logic-diagram` | `outputs/diagrams/fee-calculation-logic.md` |
+| 2E | Diagram Architect | `/create-state-diagram` | `outputs/diagrams/settlement-states.md` |
+| 3 | Documentation Reviewer | `/review-documentation` | `outputs/review-summary.md` |
 
 **Total Duration:** 50 minutes
 
 ---
 
+## How to Use Agents
+
+Agents are selected using the **Agent Selector Dropdown** in Copilot Chat (not by typing `@`).
+
+1. Open Copilot Chat (Ctrl+Shift+I / Cmd+Shift+I)
+2. Click the **Agent Selector Dropdown** (top of chat panel)
+3. Select the appropriate agent for your task
+4. Type your prompt and press Enter
+
+![Agent Selector](https://code.visualstudio.com/assets/docs/copilot/chat/agent-picker.png)
+
 ## Available Agents
 
-| Agent | Purpose | Invoke With |
-|-------|---------|-------------|
-| @requirements-analyst | Transform meeting notes into requirements | `@requirements-analyst` in chat |
-| @legacy-analyst | Extract business rules from COBOL code | `@legacy-analyst` in chat |
-| @diagram-architect | Create Mermaid and draw.io diagrams | `@diagram-architect` in chat |
-| @documentation-reviewer | Review documentation quality | `@documentation-reviewer` in chat |
+| Agent | Purpose |
+|-------|---------|
+| Requirements Analyst | Transform meeting notes into requirements |
+| Legacy Analyst | Extract business rules from COBOL code |
+| Diagram Architect | Create Mermaid and draw.io diagrams |
+| Documentation Reviewer | Review documentation quality |
 
 ## Available Prompts
 
@@ -58,8 +69,8 @@ Follow these steps through each stage. After each stage, run `/hand-off` to trac
    - [ ] Repository cloned to local machines
    - [ ] Verify `.github/agents/` folder is present
    - [ ] Verify `.github/prompts/` folder is present
-   - [ ] Test: Type `@` in Copilot Chat to see available agents
-   - [ ] Test: Type `/` in Copilot Chat to see available prompts
+   - [ ] Test: Open Agent Selector Dropdown to see custom agents
+   - [ ] Test: Type `/` in Copilot Chat to see custom prompts
 
 2. **Materials Review**
    - [ ] Review `inputs/meeting-notes/portfolio-rebalancing-notes.md`
@@ -71,7 +82,7 @@ Follow these steps through each stage. After each stage, run `/hand-off` to trac
 1. **Setup Checklist**
    - [ ] Open this repository in VS Code
    - [ ] Verify Copilot Chat is active (Ctrl+Shift+I / Cmd+Shift+I)
-   - [ ] Type `@` to verify custom agents appear
+   - [ ] Click Agent Selector Dropdown to verify custom agents appear
    - [ ] Type `/` to verify custom prompts appear
    - [ ] Bookmark https://mermaid.live
 
@@ -96,7 +107,7 @@ Follow these steps through each stage. After each stage, run `/hand-off` to trac
 
 ## Stage 1A – Requirements from Meeting Notes (8 min)
 
-**Agent:** @requirements-analyst
+**Agent:** Requirements Analyst (select from dropdown)
 **Prompt:** `/extract-requirements`
 
 ### Actions
@@ -106,23 +117,25 @@ Follow these steps through each stage. After each stage, run `/hand-off` to trac
    inputs/meeting-notes/portfolio-rebalancing-notes.md
    ```
 
-2. **Invoke agent:** In Copilot Chat, type:
+2. **Select agent:** Click Agent Selector Dropdown → **Requirements Analyst**
+
+3. **Enter prompt:**
    ```
-   @requirements-analyst Transform the meeting notes in
+   Transform the meeting notes in
    #file:inputs/meeting-notes/portfolio-rebalancing-notes.md
    into a professional requirements document
    ```
 
    **Or use the prompt:** `/extract-requirements`
 
-3. **Review output for:**
+4. **Review output for:**
    - [ ] Feature overview (2-3 sentences)
    - [ ] 3-5 user stories with acceptance criteria
    - [ ] Business rules with conditions
    - [ ] Assumptions documented
    - [ ] Open questions captured
 
-4. **Save to:**
+5. **Save to:**
    ```
    outputs/requirements/portfolio-rebalancing-requirements.md
    ```
@@ -133,7 +146,7 @@ Follow these steps through each stage. After each stage, run `/hand-off` to trac
 
 ## Stage 1B – Requirements from Legacy COBOL (12 min)
 
-**Agent:** @legacy-analyst
+**Agent:** Legacy Analyst (select from dropdown)
 **Prompt:** `/analyze-cobol`
 
 ### The Challenge
@@ -147,25 +160,27 @@ Your company has TRDSETTL, a 1994 COBOL program that calculates trade settlement
    inputs/legacy-code/trade-settlement-calc.cbl
    ```
 
-2. **Step 1 - Structure Analysis (3 min):** Invoke:
+2. **Select agent:** Click Agent Selector Dropdown → **Legacy Analyst**
+
+3. **Step 1 - Structure Analysis (3 min):** Enter:
    ```
-   @legacy-analyst Analyze the structure of
+   Analyze the structure of
    #file:inputs/legacy-code/trade-settlement-calc.cbl
    Identify the main purpose, major sections, and data structures.
    ```
 
-3. **Step 2 - Extract Business Rules (5 min):** Invoke:
+4. **Step 2 - Extract Business Rules (5 min):** Enter:
    ```
-   @legacy-analyst Extract all business rules from
+   Extract all business rules from
    #file:inputs/legacy-code/trade-settlement-calc.cbl
    Focus on: fee calculations, account types, validation rules,
    settlement dates, and tier discounts.
    Format as a business rules catalog with Rule IDs.
    ```
 
-4. **Step 3 - Create Requirements (4 min):** Invoke:
+5. **Step 3 - Create Requirements (4 min):** Enter:
    ```
-   @legacy-analyst Create a formal requirements document from
+   Create a formal requirements document from
    the extracted business rules. Include: System Overview,
    Functional Requirements, Business Rules Table, Known Issues,
    and Integration Points.
@@ -173,13 +188,13 @@ Your company has TRDSETTL, a 1994 COBOL program that calculates trade settlement
 
    **Or use the prompt:** `/analyze-cobol`
 
-5. **Success Criteria:**
+6. **Success Criteria:**
    - [ ] At least 10 business rules extracted
    - [ ] Fee calculation logic documented
    - [ ] Account type handling covered
    - [ ] Known issues from comments identified
 
-6. **Save to:**
+7. **Save to:**
    ```
    outputs/requirements/trade-settlement-requirements.md
    ```
@@ -190,14 +205,16 @@ Your company has TRDSETTL, a 1994 COBOL program that calculates trade settlement
 
 ## Stage 2A – Architecture Diagram (5 min)
 
-**Agent:** @diagram-architect
+**Agent:** Diagram Architect (select from dropdown)
 **Prompt:** `/create-architecture-diagram`
 
 ### Actions
 
-1. **Invoke agent:**
+1. **Select agent:** Click Agent Selector Dropdown → **Diagram Architect**
+
+2. **Enter prompt:**
    ```
-   @diagram-architect Create a Mermaid architecture diagram for
+   Create a Mermaid architecture diagram for
    a portfolio management system with: Web/Mobile apps, API Gateway,
    Auth/Portfolio/Trading/Notification services, PostgreSQL, Redis,
    and Market Data Feed. Use subgraphs for layers.
@@ -205,9 +222,9 @@ Your company has TRDSETTL, a 1994 COBOL program that calculates trade settlement
 
    **Or use the prompt:** `/create-architecture-diagram`
 
-2. **Test at:** https://mermaid.live
+3. **Test at:** https://mermaid.live
 
-3. **Save to:**
+4. **Save to:**
    ```
    outputs/diagrams/portfolio-architecture.md
    ```
@@ -216,14 +233,16 @@ Your company has TRDSETTL, a 1994 COBOL program that calculates trade settlement
 
 ## Stage 2B – Sequence Diagram (5 min)
 
-**Agent:** @diagram-architect
+**Agent:** Diagram Architect (select from dropdown)
 **Prompt:** `/create-sequence-diagram`
 
 ### Actions
 
-1. **Invoke agent:**
+1. **Select agent:** Click Agent Selector Dropdown → **Diagram Architect**
+
+2. **Enter prompt:**
    ```
-   @diagram-architect Create a Mermaid sequence diagram for trade
+   Create a Mermaid sequence diagram for trade
    execution: User → Web App → API Gateway → Trading Service →
    Portfolio Service → External Broker → Notification. Include an
    alt block for insufficient funds.
@@ -231,9 +250,9 @@ Your company has TRDSETTL, a 1994 COBOL program that calculates trade settlement
 
    **Or use the prompt:** `/create-sequence-diagram`
 
-2. **Test at:** https://mermaid.live
+3. **Test at:** https://mermaid.live
 
-3. **Save to:**
+4. **Save to:**
    ```
    outputs/diagrams/trade-execution-sequence.md
    ```
@@ -244,7 +263,7 @@ Your company has TRDSETTL, a 1994 COBOL program that calculates trade settlement
 
 ## Stage 2C – Legacy System Flow Diagram (5 min)
 
-**Agent:** @diagram-architect
+**Agent:** Diagram Architect (select from dropdown)
 **Prompt:** `/create-legacy-flowchart`
 
 ### Why This Matters
@@ -253,9 +272,11 @@ Legacy code is often in languages few understand. Diagrams become **living docum
 
 ### Actions
 
-1. **Invoke agent:**
+1. **Select agent:** Click Agent Selector Dropdown → **Diagram Architect**
+
+2. **Enter prompt:**
    ```
-   @diagram-architect Using my extracted requirements from
+   Using my extracted requirements from
    #file:outputs/requirements/trade-settlement-requirements.md
    create a Mermaid flowchart showing the TRDSETTL processing flow:
    Initialization → Validation → Fee Calculation → Settlement →
@@ -264,9 +285,9 @@ Legacy code is often in languages few understand. Diagrams become **living docum
 
    **Or use the prompt:** `/create-legacy-flowchart`
 
-2. **Test at:** https://mermaid.live
+3. **Test at:** https://mermaid.live
 
-3. **Save to:**
+4. **Save to:**
    ```
    outputs/diagrams/trade-settlement-flow.md
    ```
@@ -275,14 +296,16 @@ Legacy code is often in languages few understand. Diagrams become **living docum
 
 ## Stage 2D – Fee Calculation Logic Diagram (5 min)
 
-**Agent:** @diagram-architect
+**Agent:** Diagram Architect (select from dropdown)
 **Prompt:** `/create-fee-logic-diagram`
 
 ### Actions
 
-1. **Invoke agent:**
+1. **Select agent:** Click Agent Selector Dropdown → **Diagram Architect**
+
+2. **Enter prompt:**
    ```
-   @diagram-architect Create a Mermaid flowchart showing fee
+   Create a Mermaid flowchart showing fee
    calculation logic: Commission (base 0.75%, tier discounts,
    min/max), SEC Fee (sells only), TAF Fee (sells only, capped),
    Exchange fees (varies), and Foreign security fees. Use subgraphs.
@@ -290,9 +313,9 @@ Legacy code is often in languages few understand. Diagrams become **living docum
 
    **Or use the prompt:** `/create-fee-logic-diagram`
 
-2. **Test at:** https://mermaid.live
+3. **Test at:** https://mermaid.live
 
-3. **Save to:**
+4. **Save to:**
    ```
    outputs/diagrams/fee-calculation-logic.md
    ```
@@ -301,23 +324,25 @@ Legacy code is often in languages few understand. Diagrams become **living docum
 
 ## Stage 2E – State Diagram (5 min)
 
-**Agent:** @diagram-architect
+**Agent:** Diagram Architect (select from dropdown)
 **Prompt:** `/create-state-diagram`
 
 ### Actions
 
-1. **Invoke agent:**
+1. **Select agent:** Click Agent Selector Dropdown → **Diagram Architect**
+
+2. **Enter prompt:**
    ```
-   @diagram-architect Create a Mermaid stateDiagram-v2 showing
+   Create a Mermaid stateDiagram-v2 showing
    account status states: ACTIVE, SUSPENDED, RESTRICTED, CLOSED.
    Show allowed transitions and what triggers them.
    ```
 
    **Or use the prompt:** `/create-state-diagram`
 
-2. **Test at:** https://mermaid.live
+3. **Test at:** https://mermaid.live
 
-3. **Save to:**
+4. **Save to:**
    ```
    outputs/diagrams/settlement-states.md
    ```
@@ -346,7 +371,7 @@ Open https://app.diagrams.net to create the diagrams using the layout instructio
 
 ## Stage 3 – Documentation Review (5 min)
 
-**Agent:** @documentation-reviewer
+**Agent:** Documentation Reviewer (select from dropdown)
 **Prompt:** `/review-documentation`
 
 ### Actions
@@ -355,9 +380,11 @@ Open https://app.diagrams.net to create the diagrams using the layout instructio
    - `outputs/requirements/*.md`
    - `outputs/diagrams/*.md`
 
-2. **Invoke agent:**
+2. **Select agent:** Click Agent Selector Dropdown → **Documentation Reviewer**
+
+3. **Enter prompt:**
    ```
-   @documentation-reviewer Review all documentation in
+   Review all documentation in
    #file:outputs/requirements/portfolio-rebalancing-requirements.md
    #file:outputs/requirements/trade-settlement-requirements.md
    and diagrams in outputs/diagrams/.
@@ -367,9 +394,9 @@ Open https://app.diagrams.net to create the diagrams using the layout instructio
 
    **Or use the prompt:** `/review-documentation`
 
-3. **Address top issues** identified in the review
+4. **Address top issues** identified in the review
 
-4. **Save to:**
+5. **Save to:**
    ```
    outputs/review-summary.md
    ```
@@ -403,7 +430,7 @@ Open https://app.diagrams.net to create the diagrams using the layout instructio
 
 | Problem | Solution |
 |---------|----------|
-| Agent not appearing | Verify `.github/agents/` folder exists with `.agent.md` files |
+| Agent not in dropdown | Verify `.github/agents/` folder exists with `.agent.md` files |
 | Prompt not appearing | Verify `.github/prompts/` folder exists with `.prompt.md` files |
 | Mermaid won't render | Check syntax at https://mermaid.live, look for missing quotes |
 | Output too generic | Reference specific files with `#file:path/to/file.md` |
@@ -428,25 +455,27 @@ Open https://app.diagrams.net to create the diagrams using the layout instructio
 
 Compare your extracted requirements to the existing (outdated) documentation:
 
-```
-@legacy-analyst Compare
-#file:outputs/requirements/trade-settlement-requirements.md
-with #file:inputs/existing-docs/legacy-system-doc.md
+1. Select **Legacy Analyst** from the Agent Selector Dropdown
+2. Enter:
+   ```
+   Compare
+   #file:outputs/requirements/trade-settlement-requirements.md
+   with #file:inputs/existing-docs/legacy-system-doc.md
 
-Identify:
-1. What's in the code but not documented?
-2. What's documented but wrong?
-3. Which is more accurate?
-```
+   Identify:
+   1. What's in the code but not documented?
+   2. What's documented but wrong?
+   3. Which is more accurate?
+   ```
 
 This demonstrates why **code is the ultimate source of truth** for legacy systems.
 
 ---
 
-## Agent Loop Reminder
+## Agent Workflow
 
 ```
-@requirements-analyst → @legacy-analyst → @diagram-architect → @documentation-reviewer
+Requirements Analyst → Legacy Analyst → Diagram Architect → Documentation Reviewer
 ```
 
 Use `/hand-off` after each stage to track progress in `outputs/workflow-tracker.md`.
@@ -458,7 +487,7 @@ Use `/hand-off` after each stage to track progress in `outputs/workflow-tracker.
 ### Pacing Tips
 - Start each stage with 1-minute overview
 - Give 2-minute warning before stage ends
-- Demonstrate agent invocation (`@agent-name`) first
+- Demonstrate agent selection from dropdown first
 - Show prompt usage (`/prompt-name`) as alternative
 - Have example outputs ready for stuck participants
 

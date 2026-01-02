@@ -33,12 +33,14 @@ Hands-on lab for AI-assisted technical documentation using GitHub Copilot custom
 
 ## Custom Agents
 
+Select from the Agent Selector Dropdown in Copilot Chat:
+
 | Agent | Purpose |
 |-------|---------|
-| `@requirements-analyst` | Transform meeting notes into requirements |
-| `@legacy-analyst` | Extract business rules from COBOL code |
-| `@diagram-architect` | Create Mermaid and draw.io diagrams |
-| `@documentation-reviewer` | Review documentation quality |
+| Requirements Analyst | Transform meeting notes into requirements |
+| Legacy Analyst | Extract business rules from COBOL code |
+| Diagram Architect | Create Mermaid and draw.io diagrams |
+| Documentation Reviewer | Review documentation quality |
 
 ## Custom Prompts
 
