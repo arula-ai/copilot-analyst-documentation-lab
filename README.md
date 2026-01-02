@@ -1,82 +1,89 @@
-# Copilot Analyst Documentation Lab
+# Analyst Documentation Lab
 
-Workshop lab for AI-assisted documentation creation.
+Hands-on lab for AI-assisted technical documentation using GitHub Copilot custom agents and prompts.
 
-## Overview
+## What You'll Learn
 
-This lab provides hands-on practice creating technical documentation and visual artifacts using AI tools. Unlike code-focused labs, this emphasizes documentation artifacts that analysts create daily.
+- Extract requirements from meeting notes using AI
+- Reverse-engineer business rules from legacy COBOL code
+- Create Mermaid diagrams for system architecture and business logic
+- Review documentation for quality and completeness
 
-## Getting Started
+## Prerequisites
+
+- VS Code with GitHub Copilot extension
+- Access to https://mermaid.live for diagram verification
+
+## Quick Start
 
 1. Clone this repository
-2. Open in your preferred editor with AI assistant (Claude, Copilot, etc.)
-3. Navigate to `exercises/` and follow the lab instructions
-4. Save your work in the `outputs/` directory
+2. Open in VS Code
+3. Verify agents work: Type `@` in Copilot Chat to see custom agents
+4. Verify prompts work: Type `/` in Copilot Chat to see custom prompts
+5. Follow the [LAB_ACTION_GUIDE.md](LAB_ACTION_GUIDE.md)
 
-## Structure
+## Lab Structure
+
+| Lab | Duration | Focus |
+|-----|----------|-------|
+| Lab 1 | 20 min | Requirements extraction (meeting notes + COBOL) |
+| Lab 2 | 25 min | Visual diagrams (Mermaid + draw.io) |
+| Lab 3 | 5 min | Documentation review |
+| **Total** | **50 min** | |
+
+## Custom Agents
+
+| Agent | Purpose |
+|-------|---------|
+| `@requirements-analyst` | Transform meeting notes into requirements |
+| `@legacy-analyst` | Extract business rules from COBOL code |
+| `@diagram-architect` | Create Mermaid and draw.io diagrams |
+| `@documentation-reviewer` | Review documentation quality |
+
+## Custom Prompts
+
+| Prompt | Purpose |
+|--------|---------|
+| `/extract-requirements` | Meeting notes to requirements doc |
+| `/analyze-cobol` | COBOL code to business rules |
+| `/create-architecture-diagram` | System architecture diagram |
+| `/create-sequence-diagram` | Trade execution sequence |
+| `/create-legacy-flowchart` | COBOL process flow |
+| `/create-fee-logic-diagram` | Fee calculation logic |
+| `/create-state-diagram` | Account state machine |
+| `/review-documentation` | Quality review all outputs |
+
+## Directory Structure
 
 ```
-copilot-analyst-documentation-lab/
-├── inputs/              # Raw materials to transform
-│   ├── meeting-notes/   # Rough meeting notes
-│   ├── rough-specs/     # Initial specifications
-│   └── existing-docs/   # Docs needing improvement
-├── templates/           # Documentation templates
-│   ├── requirements/    # Requirements doc template
-│   ├── technical-specs/ # Tech spec template
-│   ├── process-docs/    # Process doc template
-│   └── diagrams/        # Mermaid diagram templates
-├── exercises/           # Lab instructions
-│   ├── lab1-documentation/  # Creating docs (15 min)
-│   ├── lab2-diagrams/       # Creating diagrams (15 min)
-│   └── lab3-review/         # Quality review (5 min)
-├── outputs/             # Your completed work
+├── .github/
+│   ├── agents/              # Custom Copilot agents
+│   ├── prompts/             # Reusable prompts
+│   └── copilot-instructions.md
+├── inputs/
+│   ├── meeting-notes/       # Meeting transcripts
+│   ├── legacy-code/         # COBOL trade settlement program
+│   └── existing-docs/       # Outdated documentation
+├── outputs/                 # Your work goes here
 │   ├── requirements/
-│   ├── specs/
 │   └── diagrams/
-├── examples/            # Before/after examples
-│   ├── before-after/
-│   └── diagrams/
-└── reference/           # Standards and terminology
-    ├── terminology/
-    └── standards/
+├── exercises/               # Detailed lab instructions
+├── templates/               # Document templates
+├── examples/                # Before/after examples
+└── reference/               # Glossary and standards
 ```
 
-## Labs
+## Key Input Materials
 
-| Lab | Focus | Duration |
-|-----|-------|----------|
-| Lab 1 | Creating Technical Documentation | 15 min |
-| Lab 2 | Creating Visual Diagrams | 15 min |
-| Lab 3 | Documentation Review | 5 min |
-
-### Lab 1: Creating Technical Documentation
-Transform rough meeting notes into professional requirements documents and technical specifications.
-
-### Lab 2: Creating Diagrams
-Generate Mermaid diagrams for system architecture, sequence flows, and process flowcharts.
-
-### Lab 3: Documentation Review
-Quality check your documentation using AI-assisted review prompts.
+- **Portfolio Rebalancing Notes** - Meeting transcript to convert to requirements
+- **TRDSETTL COBOL Program** - 1994 trade settlement system with embedded business rules
+- **Legacy System Doc** - Intentionally outdated documentation for comparison
 
 ## Tools
 
-- **AI Assistant**: Claude, GitHub Copilot, or similar
-- **Mermaid Live Editor**: https://mermaid.live (for diagram verification)
-- **Markdown Preview**: Your editor's built-in preview
-
-## Tips for Success
-
-1. **Start with templates** - Use the provided templates for consistent structure
-2. **Be specific in prompts** - More context yields better AI output
-3. **Always review** - AI output needs human verification
-4. **Test diagrams** - Verify Mermaid syntax renders correctly
-5. **Use the glossary** - Maintain consistent terminology
-
-## Related Resources
-
-- [Mermaid Documentation](https://mermaid.js.org/)
-- [Markdown Guide](https://www.markdownguide.org/)
+- **GitHub Copilot** - AI assistant with custom agents
+- **Mermaid Live Editor** - https://mermaid.live
+- **Draw.io** - https://app.diagrams.net (optional)
 
 ## License
 
