@@ -1,9 +1,8 @@
 ---
 name: Create Legacy Flowchart
 description: Generate a Mermaid flowchart showing COBOL program processing flow
-agent: diagram-architect
 ---
-
+ 
 Create a Mermaid flowchart showing the main processing flow of the TRDSETTL COBOL program.
 
 ## Input

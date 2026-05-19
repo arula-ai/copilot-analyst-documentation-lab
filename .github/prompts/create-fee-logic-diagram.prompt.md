@@ -1,9 +1,8 @@
 ---
 name: Create Fee Logic Diagram
 description: Generate a Mermaid flowchart showing fee calculation logic from COBOL
-agent: diagram-architect
 ---
-
+ 
 Create a Mermaid flowchart showing the fee calculation logic from the TRDSETTL COBOL program.
 
 ## Fee Types to Document

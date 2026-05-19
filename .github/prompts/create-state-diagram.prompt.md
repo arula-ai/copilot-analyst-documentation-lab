@@ -1,9 +1,8 @@
 ---
 name: Create State Diagram
 description: Generate a Mermaid state diagram for account and order states
-agent: diagram-architect
 ---
-
+ 
 Create Mermaid state diagrams for the TRDSETTL system.
 
 ## State Machines to Document

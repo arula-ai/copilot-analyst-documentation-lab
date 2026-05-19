@@ -1,9 +1,8 @@
 ---
 name: Create Sequence Diagram
 description: Generate a Mermaid sequence diagram for trade execution flow
-agent: diagram-architect
 ---
-
+ 
 Create a Mermaid sequence diagram for the trade execution flow.
 
 ## Participants
