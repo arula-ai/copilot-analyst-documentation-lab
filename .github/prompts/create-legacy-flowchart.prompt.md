@@ -1,15 +1,13 @@
 ---
 name: Create Legacy Flowchart
 description: Generate a Mermaid flowchart showing COBOL program processing flow
----
+agent: diagram-architect
  
 Create a Mermaid flowchart showing the main processing flow of the TRDSETTL COBOL program.
 
 ## Input
 
 Use the COBOL program or extracted requirements from:
-- [inputs/legacy-code/trade-settlement-calc.cbl](../inputs/legacy-code/trade-settlement-calc.cbl)
-- Your Lab 1 extracted requirements
 
 ## Flow to Document
 

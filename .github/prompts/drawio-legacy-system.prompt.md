@@ -1,16 +1,13 @@
 ---
 name: Draw.io Legacy System Diagram
 description: Create draw.io diagram for legacy COBOL system visualization
----
+agent: diagram-architect
  
 Create a professional draw.io diagram visualizing the TRDSETTL legacy system.
 
 ## Purpose
 
 Create a visual representation of the COBOL trade settlement system that:
-- Executives and business stakeholders can understand
-- Developers can use for modernization planning
-- Compliance can verify fee calculation logic
 
 ## Diagram Options
 
@@ -20,24 +17,12 @@ Create a visual representation of the COBOL trade settlement system that:
 LAYOUT: Centered target system with external entities around it
 
 CENTER:
-- TRDSETTL Program (large rectangle, mainframe icon)
   - Label: "Trade Settlement System"
   - Subtitle: "COBOL/z/OS - Est. 1994"
 
 EXTERNAL ENTITIES (circles/ovals around center):
-- TOP: Trade Entry System (input)
-- LEFT: Account Master (VSAM file, cylinder)
-- RIGHT: Fee History (output file, cylinder)
-- BOTTOM-LEFT: DATEUTIL Program (subprocess)
-- BOTTOM-RIGHT: Audit Log (output)
 
 ARROWS (with data labels):
-- Trade Entry → TRDSETTL: "Trade Records"
-- Account Master → TRDSETTL: "Account Data"
-- TRDSETTL → Fee History: "Fee Records"
-- TRDSETTL → DATEUTIL: "Date Request"
-- DATEUTIL → TRDSETTL: "Business Day"
-- TRDSETTL → Audit Log: "Audit Trail"
 ```
 
 ### Option B: Process Flow Diagram
@@ -55,20 +40,14 @@ SWIMLANES (horizontal bands):
 SHAPES IN EACH LANE:
 
 Initialization:
-- [Start] → [Open Files] → [Initialize Variables]
 
 Validation:
-- [Check Account Status] → <Account OK?> → [Check Security] → <Security OK?> → [Check Quantity] → <Quantity OK?>
-- Each <Decision> has "No" path to [Reject with Error Code]
 
 Fee Calculation:
-- [Calculate Commission] → [Apply Tier Discount] → [Check Min/Max] → [Calculate SEC Fee] → [Calculate TAF] → [Calculate Exchange Fee] → [Sum Total Fees]
 
 Settlement:
-- [Determine Security Type] → [Get Base Days] → [Call DATEUTIL] → [Set Settlement Date]
 
 Finalization:
-- [Apply Margin Rules?] → [Write Audit Record] → [Close Files] → [End]
 
 DECISION DIAMONDS with conditions visible
 ERROR PATHS in red arrows branching to rejection boxes
@@ -125,15 +104,8 @@ Use callout boxes for conditions (e.g., "Only for sells", "If foreign security")
 | Error/Reject | Rectangle | #F44336 (red) |
 
 ### Arrows
-- Data flow: Solid arrow
-- Control flow: Dashed arrow
-- Error path: Red arrow
-- Optional: Gray dashed arrow
 
 ### Text
-- System names: Bold, larger font
-- Labels: Regular, smaller font
-- Conditions: Italic
 
 ## Export Recommendations
 
@@ -143,5 +115,3 @@ Use callout boxes for conditions (e.g., "Only for sells", "If foreign security")
 4. **For embedding**: Use draw.io embed code
 
 ## Save To
-- Layout instructions: `outputs/diagrams/trdsettl-system-drawio.md`
-- Diagram file: `outputs/diagrams/trdsettl-system.drawio` (or `.png`)

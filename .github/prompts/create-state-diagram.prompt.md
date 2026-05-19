@@ -34,8 +34,7 @@ Create Mermaid state diagrams for the TRDSETTL system.
 | PENDING | Awaiting execution |
 | SUBMITTED | Sent to broker |
 | PARTIAL_FILL | Partially executed |
-| FILLED | Fully executed |
-| CANCELLED | User cancelled |
+agent: diagram-architect
 | EXPIRED | Time limit reached |
 | FAILED | System error |
 
@@ -51,11 +50,6 @@ Create Mermaid state diagrams for the TRDSETTL system.
 
 ```mermaid
 stateDiagram-v2
-    [*] --> ACTIVE: Account Opened
-
-    ACTIVE --> SUSPENDED: Compliance Issue
-    ACTIVE --> RESTRICTED: Trading Warning
-    SUSPENDED --> ACTIVE: Issue Resolved
     RESTRICTED --> ACTIVE: Restrictions Lifted
 
     ACTIVE --> CLOSED: Close Account

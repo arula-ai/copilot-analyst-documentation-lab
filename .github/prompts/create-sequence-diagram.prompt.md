@@ -12,20 +12,12 @@ Create a Mermaid sequence diagram for the trade execution flow.
 - API Gateway
 - Trading Service
 - Portfolio Service
-- External Broker
-- Notification Service
+agent: diagram-architect
 
 ## Flow to Document
 
 ### Success Path
 1. User submits trade order via Web App
-2. Web App sends request to API Gateway
-3. API Gateway routes to Trading Service
-4. Trading Service checks funds with Portfolio Service
-5. Portfolio Service confirms available funds
-6. Trading Service submits order to External Broker
-7. External Broker returns execution confirmation
-8. Trading Service updates Portfolio Service
 9. Trading Service triggers Notification Service
 10. Notification sends confirmation to User
 11. Web App displays confirmation
@@ -43,9 +35,6 @@ Create a Mermaid sequence diagram for the trade execution flow.
    - `->>`  for synchronous requests
    - `-->>` for responses
    - `->>+` and `-->>-` for activation
-4. **Add notes** where helpful
-
-## Output Format
 
 ```mermaid
 sequenceDiagram

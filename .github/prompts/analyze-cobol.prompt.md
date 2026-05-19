@@ -1,7 +1,7 @@
 ---
 name: Analyze COBOL
 description: Extract business requirements from legacy COBOL code
----
+agent: legacy-analyst
  
 Analyze the COBOL trade settlement program and extract business requirements.
 
@@ -26,18 +26,9 @@ For each rule found, document:
 | BR-001 | ... | ... | ... | 3000-CALC-FEES |
 
 Look specifically for:
-- Fee calculation logic (commissions, SEC fees, TAF, exchange fees)
-- Account type-specific rules (margin, IRA, institutional)
-- Validation rules (what causes rejection)
-- Settlement date calculation rules
-- Tier-based discount logic
 
 ### Step 3: Technical Debt
 Document issues found in comments:
-- TODOs and FIXMEs
-- References to tickets or departed employees
-- Hardcoded values that should be configurable
-- Known bugs or limitations
 
 ## Output Structure
 

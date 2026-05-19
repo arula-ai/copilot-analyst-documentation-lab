@@ -1,6 +1,7 @@
 ---
 name: Hand-Off
 description: Summarize progress and update workflow tracker between lab stages
+agent: documentation-reviewer
 
 Summarize the current lab stage progress for hand-off.
 
