@@ -1,7 +1,7 @@
 ---
 name: Analyze COBOL
 description: Extract business requirements from legacy COBOL code
-agent: legacy-analyst
+agent: Legacy Code Analyst
  
 Analyze the COBOL trade settlement program and extract business requirements.
 

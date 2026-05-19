@@ -1,9 +1,9 @@
 ---
 name: Create Fee Logic Diagram
 description: Generate a Mermaid flowchart showing fee calculation logic from COBOL
-agent: diagram-architect
+agent: Diagram Architect
 ---
- 
+
 Create a Mermaid flowchart showing the fee calculation logic from the TRDSETTL COBOL program.
 
 ## Fee Types to Document
@@ -32,22 +32,36 @@ Create a Mermaid flowchart showing the fee calculation logic from the TRDSETTL C
 
 ### 5. Total Fee Calculation
 - Sum all applicable fees
-agent: diagram-architect
----
+
 ## Requirements
 
 1. **Use subgraphs** to group each fee category
 2. **Show decision points** for conditional logic
 3. **Include specific values** (rates, limits)
 4. **Show the formula flow** clearly
+5. **Color-code** success vs. special cases if possible
+
+## Output Format
+
+```mermaid
+flowchart TD
     Start([Calculate Fees]) --> MutualFund{Mutual Fund?}
 
+    subgraph Commission["Commission Calculation"]
+        MutualFund -->|Yes| MF12b1[Calculate 12b-1 Fee]
         MutualFund -->|No| BaseComm[Base: Principal × 0.75%]
         BaseComm --> TierDisc{Apply Tier Discount}
+        %% Continue with tier logic...
+    end
+
+    subgraph Regulatory["Regulatory Fees - Sells Only"]
         %% SEC and TAF logic...
     end
+
+    %% Continue with all fee types...
 ```
 
+## Verification
 
 Test the diagram at https://mermaid.live before saving.
 

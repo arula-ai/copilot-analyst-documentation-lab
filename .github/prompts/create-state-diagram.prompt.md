@@ -2,7 +2,8 @@
 name: Create State Diagram
 description: Generate a Mermaid state diagram for account and order states
 ---
- 
+agent: Diagram Architect
+
 Create Mermaid state diagrams for the TRDSETTL system.
 
 ## State Machines to Document
@@ -34,7 +35,6 @@ Create Mermaid state diagrams for the TRDSETTL system.
 | PENDING | Awaiting execution |
 | SUBMITTED | Sent to broker |
 | PARTIAL_FILL | Partially executed |
-agent: diagram-architect
 | EXPIRED | Time limit reached |
 | FAILED | System error |
 

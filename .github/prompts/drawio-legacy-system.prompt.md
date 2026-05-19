@@ -1,7 +1,7 @@
 ---
 name: Draw.io Legacy System Diagram
 description: Create draw.io diagram for legacy COBOL system visualization
-agent: diagram-architect
+agent: Diagram Architect
  
 Create a professional draw.io diagram visualizing the TRDSETTL legacy system.
 

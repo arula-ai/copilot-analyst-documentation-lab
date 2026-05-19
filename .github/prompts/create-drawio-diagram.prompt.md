@@ -1,7 +1,7 @@
 ---
 name: Create Draw.io Diagram
 description: Generate draw.io compatible diagrams with layout instructions
-agent: diagram-architect
+agent: Diagram Architect
 ---
 Create a diagram with draw.io-compatible format and layout instructions.
 

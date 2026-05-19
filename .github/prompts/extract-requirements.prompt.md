@@ -1,7 +1,7 @@
 ---
 name: Extract Requirements
 description: Transform meeting notes into a professional requirements document
-agent: requirements-analyst
+agent: Requirements Analyst
 ---
 ---
 

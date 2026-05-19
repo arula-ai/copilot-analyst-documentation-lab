@@ -1,7 +1,7 @@
 ---
 name: Review Documentation
 description: Review all lab outputs for quality, completeness, and accuracy
-agent: documentation-reviewer
+agent: Documentation Reviewer
 ---
  
 Review the documentation artifacts created during Labs 1 and 2.

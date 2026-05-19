@@ -1,7 +1,7 @@
 ---
 name: Create Architecture Diagram
 description: Generate a Mermaid architecture diagram for the portfolio management system
-agent: diagram-architect
+agent: Diagram Architect
 ---
  
 Create a Mermaid architecture diagram for the portfolio management system.
